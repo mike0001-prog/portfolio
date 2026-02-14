@@ -409,7 +409,7 @@ Maintained network security by issuing credentials to users prior to network acc
                                       Articly is a social for students platform to share their views on societal issues by creating articles 
                                       
                                       <b>Stack: Django,Allauth,Jquery,HTML,CSS, Bootstrap</b>
-                                      <a href="">see more</a> 
+                                      <a href="#articly-challenge">see more</a> 
                                       <a href="">Check it out</a>
                                     </div>
                                 </div>
@@ -484,14 +484,12 @@ Maintained network security by issuing credentials to users prior to network acc
                              <div class="portfolio-item py-5 border-bottom wow fadeInUp" data-wow-delay="0.3s">
                                 <div class="row g-4 align-items-center">
                                     <div class="col-12">
-                                        <h4 class="text-body">Full Stack Development</h4>
+                                        <!-- <h4 class="text-body">Full Stack Development</h4> -->
                                         <h1 class="display-6 mb-0" id="articly-challenge">Articly (Social Platform For Students)</h1>
                                     </div>
                                     <div class="col-12">
                                          <md-block>
-        Perfect! You want a **technical report-style write-up** that shows your thought process, engineering decisions, trade-offs, and best practices — something a recruiter, mentor, or hiring manager can appreciate. Here's a structured draft you can use for **Articly**:
 
----
 
 # Articly – Technical Overview & Feature Report
 
@@ -512,17 +510,17 @@ Maintained network security by issuing credentials to users prior to network acc
 | Comments          | `Comment` model with profanity filtering           | Profane words are blurred using a predefined dictionary   |
 | Bookmarks         | one-to-many `Bookmark` model                      | Supports quick access to saved articles                   |
 | Download articles | PDF generation on demand                           | Ensures users can save and reference articles      |
-| User connections  | Many-to-many `Connection` model + caching          | Inspired by LinkedIn; connections help promote engagement used caching to reduce DB load for connections  |
+| User connections  | Many-to-many `Connection` model + caching          | Inspired by LinkedIn; connections help promote engagement, used caching to reduce DB load for connections  |
 
 ### Technical Decisions
 
-1. **Backend:** Django + PostgreSQL
-2. **Caching:** File-based cache initially; cache connection lists 
+
+1. **Caching:** File-based cache initially; cache connection lists 
 
    * TTL: 24 hours
    * Invalidation on add/remove to maintain freshness
-3. **Frontend:** Django templates + AJAX for likes/comments to avoid page reloads
-4. **Profanity filtering:** Predefined list with dynamic blur on front-end rendering
+2. **Frontend:** Django templates + AJAX for likes/comments to avoid page reloads
+3. **Profanity filtering:** Predefined list with dynamic blur on front-end rendering
 
 ---
 
@@ -530,7 +528,7 @@ Maintained network security by issuing credentials to users prior to network acc
 
 | Decision                                     | Trade-off                             | Reasoning                                                                  |
 | -------------------------------------------- | ------------------------------------- | -------------------------------------------------------------------------- |
-| File-based cache                             | Slower than Redis, single-server only | Simple, easy to implement for MVP; Redis can be added later                |
+| File-based cache                             | Slower than Redis, single-server only | Simple, easy to implement for MVP; Redis can be added later, to reduce db loads and redundant request of data that does not change overtime               |
 | Cache TTL 24 hours                           | Slight risk of stale data             | Mitigated by invalidation on changes; balances performance & consistency   |
 | Storing IDs instead of full objects in cache | Less flexible for complex queries     | Saves memory, faster retrieval; sufficient for connections and like counts |
 | AJAX for interactions                        | Adds frontend complexity              | Improves UX with real-time updates without page reloads                    |
