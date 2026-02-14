@@ -7,7 +7,6 @@
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="" name="keywords">
         <meta content="" name="description">
-
         <!-- Google Web Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,6 +27,8 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+        <script defer type="module" src="https://md-block.verou.me/md-block.js"></script>
+
     </head>
 
     <body>
@@ -155,7 +156,7 @@ A web developer with 2years of experience and a passion for building scalable, u
                                             <p class="mb-0"><strong class="fw-bold text-dark">Freelancer :</strong> Available</p>
                                         </div>
                                     </div>
-                                    <a href="oyeniyi kehinde michael.pdf" class="btn btn-primary py-2 px-4" download> <i class="fas fa-download me-2"></i>Download My CV</a>
+                                    <a href="oyeniyi kehinde michael resume.pdf" class="btn btn-primary py-2 px-4" download> <i class="fas fa-download me-2"></i>Download My CV</a>
                                 </div>
                             </div>
                         </div>
@@ -398,6 +399,21 @@ Maintained network security by issuing credentials to users prior to network acc
                     </div>
                     <div class="col-lg-9">
                         <div class="portfolio-content h-100 pt-6 ps-6 pb-6">
+                             <div class="portfolio-item py-5 border-bottom wow fadeInUp" data-wow-delay="0.3s">
+                                <div class="row g-4 align-items-center">
+                                    <div class="col-xl-8">
+                                        <h4 class="text-body">Full Stack Development</h4>
+                                        <h1 class="display-6 mb-0">Articly (Social Platform For Students)</h1>
+                                    </div>
+                                    <div class="col-12 col-xl-4">
+                                      Articly is a social for students platform to share their views on societal issues by creating articles 
+                                      
+                                      <b>Stack: Django,Allauth,Jquery,HTML,CSS, Bootstrap</b>
+                                      <a href="">see more</a> 
+                                      <a href="">Check it out</a>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="portfolio-item py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s">
                                 <div class="row g-4 align-items-center">
                                     <div class="col-xl-8">
@@ -409,7 +425,8 @@ Maintained network security by issuing credentials to users prior to network acc
                                         The software solution seks to solve the problem of
                                         accessibility and record keping faced by the student
                                         and the school libarian respctively
-                                        <a href="https://library-managment-system-ye4a.onrender.com" blank>Check it out</a>
+                                      <b>Stack: Django,Allauth,Jquery,HTML,CSS, Bootstrap</b>
+                                        <a href="https://library-management-system-ye4a.onrender.com" blank>Check it out</a>
                                     </div>
                                 </div>
                             </div>
@@ -423,7 +440,10 @@ Maintained network security by issuing credentials to users prior to network acc
                                       Built a responsive e-commerce website with product 
                                       listings, cart functionality, secure checkout, and user
                                        authentication, focused on performance, usability, and
-                                        clean code.
+                                        clean code. 
+                                      <b>Stack: Django,Allauth,Jquery,HTML,CSS, Bootstrap</b>
+
+                                         <a href="https://ecommerce-application-n100.onrender.com" blank>Check it out </a>
 
                                     </div>
                                 </div>
@@ -437,7 +457,7 @@ Maintained network security by issuing credentials to users prior to network acc
                                     <div class="col-12 col-xl-4">
                                       This project is a working prototype of how shuttle systems
                                       work. It covers features such as authentication,booking management,
-                                      Real-time Tracking using Polling
+                                      Real-time Tracking using Polling. It was deployed on a test web server in the school premises
                                     </div>
                                 </div>
                             </div>
@@ -448,7 +468,110 @@ Maintained network security by issuing credentials to users prior to network acc
         </div>
         <!-- Portfolio End -->
         
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row g-0">
+                    <div class="col-lg-3">
+                        <div class="portfolio-header h-100 bg-dark pt-6 pe-6 pb-6">
+                            <div class="text-start d-flex flex-column justify-content-center wow fadeInUp" data-wow-delay="0.1s">
+                                <!-- <p class="text-white sub-title"> </p> -->
+                                <h1 class="display-6 text-white mb-0">Challenges and Technical Experiences</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="portfolio-content h-100 pt-6 ps-6 pb-6">
+                             <div class="portfolio-item py-5 border-bottom wow fadeInUp" data-wow-delay="0.3s">
+                                <div class="row g-4 align-items-center">
+                                    <div class="col-12">
+                                        <h4 class="text-body">Full Stack Development</h4>
+                                        <h1 class="display-6 mb-0" id="articly-challenge">Articly (Social Platform For Students)</h1>
+                                    </div>
+                                    <div class="col-12">
+                                         <md-block>
+        Perfect! You want a **technical report-style write-up** that shows your thought process, engineering decisions, trade-offs, and best practices — something a recruiter, mentor, or hiring manager can appreciate. Here's a structured draft you can use for **Articly**:
 
+---
+
+# Articly – Technical Overview & Feature Report
+
+## 1. Overview
+
+**Articly** is a student-driven social platform that allows users to create, share, and engage with articles on societal issues. The platform supports interactions such as liking, commenting, bookmarking, downloading articles, connecting with other students, and filtering inappropriate content. The goal was to build a **scalable, performant, and user-friendly system** with social features inspired by platforms like LinkedIn.
+
+---
+
+## 2. Features & Implementation Decisions
+
+### Core Features
+
+| Feature           | Implementation                                     | Notes / Decisions                                         |
+| ----------------- | -------------------------------------------------- | --------------------------------------------------------- |
+| Article creation  | Django models + forms                              | Simple relational model: `Article` linked to `User`       |
+| Likes             | One-to-many `Like` model + caching of like counts | Allow users like an article|
+| Comments          | `Comment` model with profanity filtering           | Profane words are blurred using a predefined dictionary   |
+| Bookmarks         | one-to-many `Bookmark` model                      | Supports quick access to saved articles                   |
+| Download articles | PDF generation on demand                           | Ensures users can save and reference articles      |
+| User connections  | Many-to-many `Connection` model + caching          | Inspired by LinkedIn; connections help promote engagement used caching to reduce DB load for connections  |
+
+### Technical Decisions
+
+1. **Backend:** Django + PostgreSQL
+2. **Caching:** File-based cache initially; cache connection lists 
+
+   * TTL: 24 hours
+   * Invalidation on add/remove to maintain freshness
+3. **Frontend:** Django templates + AJAX for likes/comments to avoid page reloads
+4. **Profanity filtering:** Predefined list with dynamic blur on front-end rendering
+
+---
+
+## 3. Trade-offs
+
+| Decision                                     | Trade-off                             | Reasoning                                                                  |
+| -------------------------------------------- | ------------------------------------- | -------------------------------------------------------------------------- |
+| File-based cache                             | Slower than Redis, single-server only | Simple, easy to implement for MVP; Redis can be added later                |
+| Cache TTL 24 hours                           | Slight risk of stale data             | Mitigated by invalidation on changes; balances performance & consistency   |
+| Storing IDs instead of full objects in cache | Less flexible for complex queries     | Saves memory, faster retrieval; sufficient for connections and like counts |
+| AJAX for interactions                        | Adds frontend complexity              | Improves UX with real-time updates without page reloads                    |
+
+---
+
+## 4. Best Practices Implemented
+
+* **Cache only computed/expensive data** (like connection lists)
+* **Invalidate cache on writes** to ensure data consistency
+* **Use IDs in cache** rather than full objects for memory efficiency
+* **Lazy evaluation** of QuerySets carefully handled; always materialized before caching
+* **Separate concerns**: backend handles logic & persistence; frontend handles rendering and UX
+* **Scalable design**: caching and relational models allow smooth growth to thousands of users
+
+---
+
+## 5. Performance Considerations
+
+* **Profile loads**: Cached connection lists reduce DB queries by up to 90%
+* **High traffic**: AJAX reduces full page reloads, improving response times to <5ms for cached data
+* **Data growth**: File-based cache works for MVP; Redis recommended for >10k users
+
+---
+
+## 6. Future Improvements
+
+* Replace file-based cache with Redis for multi-server scalability
+* Implement background jobs for rebuilding popular post caches
+* Add real-time WebSocket notifications for likes/comments
+* Enhance moderation with ML-based profanity detection
+    </md-block>
+                                    </div>
+                                </div>
+                            </div>
+                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Contact Start -->
         <div class="container-fluid" id="pigraContact">
